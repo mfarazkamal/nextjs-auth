@@ -22,6 +22,7 @@ export default function LoginPage() {
       console.log('Login Response',res.data);
       toast.success("Logged in successfully");
       router.push(`/profile`);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.log("Error Found in Login Page", error);
       toast.error(error.message || "Something went wrong");
@@ -81,7 +82,7 @@ export default function LoginPage() {
         className="px-8 py-4 text-md text-white bg-yellow-700 w-[10rem] hover:bg-blue-800 rounded my-2">
         {buttonDisabled? "Enter Details" : "Login"}
       </button>
-      <p>Don't have an account? <Link href="/signup" className="hover:text-blue-500">Signup here</Link>
+      <p>Don&apos;t have an account? <Link href="/signup" className="hover:text-blue-500">Signup here</Link>
       </p>
     </div>
   );

@@ -2,7 +2,6 @@ import {connect} from '@/dbConnect/dbConnect'
 import User from '@/models/userModel'
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs'
-import {toast} from 'react-hot-toast';
 import jwt from 'jsonwebtoken'
 
 
@@ -51,7 +50,7 @@ export async function POST(request: NextRequest){
         })
 
         return response;
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error:any) {
         return NextResponse.json({error: error.message}, {status: 500})
     }

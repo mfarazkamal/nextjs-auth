@@ -15,6 +15,7 @@ export default function ProfilePage() {
       toast.success("Logged out successfully");
       router.push('/login');
       return res;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error:any) {
       return NextResponse.json({error: error.message}, {status: 500})
     }

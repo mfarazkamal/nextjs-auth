@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import User from "@/models/userModel";
 import bcrypt from "bcryptjs";
 
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const sendEmail = async ({ email, emailType, userId }: any) => {
   try {
     const hashedToken = await bcrypt.hash(userId.toString(), 10);
@@ -43,6 +43,7 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
     const mailResponse = await transport.sendMail(mailOptions);
 
     return mailResponse;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     throw new Error(error.message);
   }
